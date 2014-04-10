@@ -4,6 +4,7 @@ namespace Jma\ResourceBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+
 class JmaResourceBundle extends Bundle
 {
 

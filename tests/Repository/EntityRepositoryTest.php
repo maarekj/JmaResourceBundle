@@ -98,14 +98,18 @@ class EntityRepositoryTest extends \PHPUnit_Framework_TestCase
             $alias = ['relation1', 'relation2'];
         }
 
-        $this->qb
-            ->expects($this->exactly(2))
-            ->method($type . "Join")
-            ->withConsecutive(
-                ['o.relation1', $alias[0]],
-                ['o.relation2', $alias[1]]
-            )
-            ->will($this->returnSelf());
+        try {
+            $this->qb
+                ->expects($this->exactly(2))
+                ->method($type . "Join")
+                ->withConsecutive(
+                    ['o.relation1', $alias[0]],
+                    ['o.relation2', $alias[1]]
+                )
+                ->will($this->returnSelf());
+        } catch (\Exception $e) {
+            var_dump($e->getMessage());
+        }
 
         if ($fetch) {
             $this->qb

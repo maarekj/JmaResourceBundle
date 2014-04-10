@@ -9,12 +9,16 @@
         }
     ],
     "require": {
-        "symfony/symfony": "~2.5@dev",
-        "doctrine/orm": "~2.4@dev",
-        "doctrine/doctrine-bundle": "~1.3@dev",
-        "sylius/resource-bundle": "~0.9@dev",
-        "lexik/form-filter-bundle": "~2.0@dev"
+        "symfony/symfony": "~2.5",
+        "doctrine/orm": "~2.4",
+        "doctrine/doctrine-bundle": "~1.3",
+        "sylius/resource-bundle": "~0.9",
+        "lexik/form-filter-bundle": "~2.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "~4.2"
+    },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Jma\\ResourceBundle\\": "src/"
