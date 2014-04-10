@@ -2,6 +2,7 @@
 
 namespace Jma\ResourceBundle\DependencyInjection\Driver;
 
+use Jma\ResourceBundle\JmaResourceBundle;
 use Sylius\Bundle\ResourceBundle\DependencyInjection\Driver\DoctrineORMDriver;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
@@ -21,11 +22,10 @@ class JmaDoctrineORMDriver extends DoctrineORMDriver
     {
         $definition = new Definition('Jma\ResourceBundle\Controller\Configuration');
         $definition
-                ->setFactoryService('jma_resource.controller.configuration_factory')
-                ->setFactoryMethod('createConfiguration')
-                ->setArguments(array($this->prefix, $this->resourceName, $this->templates))
-                ->setPublic(false)
-        ;
+            ->setFactoryService('jma_resource.controller.configuration_factory')
+            ->setFactoryMethod('createConfiguration')
+            ->setArguments(array($this->prefix, $this->resourceName, $this->templates))
+            ->setPublic(false);
 
         return $definition;
     }
@@ -42,5 +42,13 @@ class JmaDoctrineORMDriver extends DoctrineORMDriver
         }
 
         return $definition;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSupportedDriver()
+    {
+        return JmaResourceBundle::DRIVER_JMA_DOCTRINE_ORM;
     }
 }
