@@ -1,0 +1,12 @@
+parameters:
+    jma_resource.controller.configuration_factory.class: Jma\ResourceBundle\Controller\ConfigurationFactory
+
+services:
+    jma_resource.controller.configuration_factory:
+        class: %jma_resource.controller.configuration_factory.class%
+        arguments: [@sylius.controller.parameters_parser]
+
+    jma_resource.event_subscriber.load_metadata:
+        class: %sylius.event_subscriber.load_metadata.class%
+        arguments: [%jma_resource.config.classes%]
+        tag: { name: doctrine.event_subscriber }
