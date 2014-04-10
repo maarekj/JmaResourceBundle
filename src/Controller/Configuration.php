@@ -7,7 +7,7 @@ use Sylius\Bundle\ResourceBundle\Controller\Configuration as BaseConfiguration;
 /**
  * Description of Configuration
  *
- * @author Maarek
+ * @author Maarek Joseph
  */
 class Configuration extends BaseConfiguration
 {
