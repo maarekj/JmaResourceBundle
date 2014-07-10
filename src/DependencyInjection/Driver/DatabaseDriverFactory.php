@@ -3,7 +3,7 @@
 namespace Jma\ResourceBundle\DependencyInjection\Driver;
 
 use Sylius\Bundle\ResourceBundle\DependencyInjection\Driver\DatabaseDriverFactory as BaseDatabaseDriverFactory;
-use Sylius\Bundle\ResourceBundle\Exception\Driver\UnknownDriverException;
+use Sylius\Component\Resource\Exception\Driver\UnknownDriverException;
 use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Jma\ResourceBundle\JmaResourceBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

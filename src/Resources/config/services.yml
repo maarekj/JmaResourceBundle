@@ -7,6 +7,6 @@ services:
         arguments: [@sylius.controller.parameters_parser]
 
     jma_resource.event_subscriber.load_metadata:
-        class: %sylius.event_subscriber.load_metadata.class%
+        class: %sylius.event_subscriber.load_orm_metadata.class%
         arguments: [%jma_resource.config.classes%]
         tag: { name: doctrine.event_subscriber }
